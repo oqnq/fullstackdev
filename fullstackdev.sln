@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebshopAdmin", "WebshopAdmin\WebshopAdmin.csproj", "{D47E1EF0-EE90-4520-8BDF-9376F8633BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebshopAdmin.Tests", "WebshopAdmin.Tests\WebshopAdmin.Tests.csproj", "{39598B66-19FC-40DC-8223-ED39BC3EA42B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D47E1EF0-EE90-4520-8BDF-9376F8633BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47E1EF0-EE90-4520-8BDF-9376F8633BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47E1EF0-EE90-4520-8BDF-9376F8633BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47E1EF0-EE90-4520-8BDF-9376F8633BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66D3E42D-C9D0-4279-AA25-F26FC58AF033}
+	EndGlobalSection
+EndGlobal
