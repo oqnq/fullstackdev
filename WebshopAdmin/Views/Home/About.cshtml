@@ -1,7 +1,92 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "A feladat leírása";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<h1>FULL STACK DEVELOPER TESZT FELADAT</h1>
+<p>
+    Egy tetszőleges &uuml;zleti piacon műk&ouml;dő c&eacute;g web&aacute;ruh&aacute;z&aacute;hoz tartoz&oacute; adminisztr&aacute;ci&oacute;s fel&uuml;let&eacute;nek egy r&eacute;szlet&eacute;t kell
+    megval&oacute;s&iacute;tani, ahol az arra jogosult felhaszn&aacute;l&oacute;k a term&eacute;keket tudj&aacute;k menedzselni.
+    Fontos szem előtt tartani, hogy a rendszert k&eacute;sőbb v&aacute;rhat&oacute;an tov&aacute;bb kell fejleszteni. Ez&eacute;rt fontos, hogy
+    megfelelően dokument&aacute;lt forr&aacute;sk&oacute;d k&eacute;sz&uuml;lj&ouml;n, a megold&aacute;s j&oacute;l fel&eacute;p&iacute;tett, &aacute;tl&aacute;that&oacute; &eacute;s logikus szerkezettel
+    rendelkezzen. Illetve szempont m&eacute;g hogy az &uuml;zemeltet&eacute;se is hat&eacute;kony m&oacute;don t&ouml;rt&eacute;njen &iacute;gy &eacute;rdemes gondolni,
+    hibakeres&eacute;st előseg&iacute;tő napl&oacute;z&aacute;sra, illetve a hosting &eacute;s telep&iacute;t&eacute;s k&eacute;rd&eacute;sk&ouml;rre is.
+    Ugyanakkor nem a teljes rendszer elk&eacute;sz&iacute;t&eacute;se a faladat. K&eacute;rlek tekints &uacute;gy a feladatra, mintha egy enterprise
+    rendszer kisebb szelet&eacute;t fejleszten&eacute;d.
+    Pozit&iacute;v elb&iacute;r&aacute;l&aacute;s eset&eacute;n, egy code review sor&aacute;n elmondhatod gondolataidat a megval&oacute;s&iacute;t&aacute;sr&oacute;l, illetve
+    reflekt&aacute;lhatsz azokra a r&eacute;szekre, melyekre esetleg nem maradt időd.
+</p>
+<h2>SPECIFIK&Aacute;CI&Oacute;</h2>
+<h3>TERM&Eacute;KEK</h3>
+<p>
+    A rendszer term&eacute;kek karbantart&aacute;s&aacute;ra ad lehetős&eacute;get kateg&oacute;ri&aacute;kra bontva. A k&ouml;vetkező alapinform&aacute;ci&oacute;kat kell
+    t&aacute;rolni az egyes term&eacute;kekhez:
+</p>
+<ul>
+    <li>&#x2705 Kateg&oacute;ria (k&ouml;telező)</li>
+    <li>&#x2705 Megnevez&eacute;s (k&ouml;telező, legal&aacute;bb 6 karakter)</li>
+    <li>&#x2705 Le&iacute;r&aacute;s (nem k&ouml;telező)</li>
+    <li>&#x2705 Term&eacute;k &aacute;ra (k&ouml;telező)</li>
+    <li>&#x2705 Felt&ouml;ltő neve (legal&aacute;bb 5 karakter)</li>
+    <li>&#x2705 Email c&iacute;m (k&ouml;telező, ellenőrizendő)</li>
+    <li>&#x274c Felt&ouml;lt&eacute;s ideje (k&ouml;telező)</li>
+</ul>
+<p>Funkci&oacute;k:</p>
+<ul>
+    <li>&#x2705 Kateg&oacute;ri&aacute;kat nem sz&uuml;ks&eacute;ges karbantartani, haszn&aacute;lhatsz fix kateg&oacute;ri&aacute;kat is</li>
+    <li>
+        Term&eacute;k karbantart&aacute;shoz tartoz&oacute; funkci&oacute;k
+        <ul>
+            <li>&#x2705 term&eacute;kek list&aacute;z&aacute;sa</li>
+            <li>&#x274c  &uacute;j term&eacute;k felvitele</li>
+            <li>&#x2705 megl&eacute;vő term&eacute;k t&ouml;rl&eacute;s</li>
+        </ul>
+    </li>
+</ul>
+<p>&nbsp;</p>
+<h3>&#x274c EMAIL C&Iacute;M ELLENŐRZ&Eacute;SE</h3>
+<p>
+    Az email c&iacute;met minden kapcsol&oacute;d&oacute; funkci&oacute; esetben ellenőrizni kell, hogy szerepel-e a c&eacute;g adatb&aacute;zis&aacute;ban. Ennek
+    megold&aacute;s&aacute;hoz az al&aacute;bbi c&iacute;men tal&aacute;lhat&oacute; JSON objektumokkal kommunik&aacute;l&oacute; API-nak a haszn&aacute;lata sz&uuml;ks&eacute;ges:
+<p><a href="https://graphisoftid-api-test.graphisoft.com/api/Account/PostIsUserWithEmailExists">https://graphisoftid-api-test.graphisoft.com/api/Account/PostIsUserWithEmailExists</a>
+<p>A fenti c&iacute;mre egy JSON objektumot kell k&uuml;ldeni POST verb seg&iacute;ts&eacute;g&eacute;vel. Minta a request objektum fel&eacute;p&iacute;t&eacute;s&eacute;re:
+<p>{GraphisoftUserDto: {EmailAddress: 'sducsai1@graphisoft.com'}}</p>
+<p>
+    A v&aacute;lasz &uuml;zenet &eacute;rtelemszerűen feldolgozand&oacute;, illetve csak az a term&eacute;k r&ouml;gz&iacute;thető amihez valid email c&iacute;m
+    tartozik.
+</p>
+<p>Tov&aacute;bbi teszt c&iacute;mek amelyek regisztr&aacute;lva vannak a rendszerben:</p>
+<ul>
+    <li>sducsai2@graphisoft.com</li>
+    <li>sducsai3@graphisoft.com</li>
+</ul>
+<h3>&#x2705 DESIGN</h3>
+<p>
+    A design elk&eacute;sz&iacute;t&eacute;se sor&aacute;n k&eacute;sz&uuml;lj arra, hogy a webalkalmaz&aacute;st t&ouml;bbf&eacute;le platformon fogj&aacute;k haszn&aacute;lni, c&eacute;l hogy
+    &iacute;zl&eacute;sesek &eacute;s j&oacute;l haszn&aacute;lhat&oacute;ak legyenek a fel&uuml;letek a k&uuml;l&ouml;nb&ouml;ző eszk&ouml;z&ouml;k&ouml;n is.
+    Haszn&aacute;lhatsz b&aacute;rmyilen design template-et, vagy ak&aacute;r saj&aacute;t kor&aacute;bbi megold&aacute;st is. Aj&aacute;nlott valamilyen front end
+    framework haszn&aacute;lata pl.: Twitter boostrap.
+</p>
+<h3>ARCHITEKT&Uacute;RA</h3>
+<p>Elv&aacute;r&aacute;sok az architekt&uacute;r&aacute;val kapcsolatban:</p>
+<ul>
+    <li>&#x2705 A rendszert n r&eacute;tegű alkalmaz&aacute;sk&eacute;nt kell megval&oacute;s&iacute;tani, ahol n &gt;= 3</li>
+    <li>&#x2705 Az adatt&aacute;rol&aacute;sra SQL illetve NoSQL alap&uacute; megold&aacute;st is v&aacute;laszhatsz</li>
+    <li>&#x2753 Az adatel&eacute;r&eacute;shez tetszőleges ORM tool-t haszn&aacute;lhat&oacute;</li>
+    <li>&#x2705 &Eacute;p&iacute;ts be n&eacute;h&aacute;nyat az &aacute;ltalad j&oacute;l ismert design pattern-ek k&ouml;z&uuml;l</li>
+    <li>&#x2705 Előny ha gondolsz olyan ter&uuml;letekre mint valid&aacute;ci&oacute;, tranzakci&oacute; kezel&eacute;s, security k&eacute;rdesek, tesztelhetős&eacute;g</li>
+</ul>
+<h3>TECHNOL&Oacute;GIAI K&Ouml;VETELM&Eacute;NYEK</h3>
+<p>A feladatot megold&aacute;s&aacute;t a k&ouml;vetkező technol&oacute;gi&aacute;k optim&aacute;lis kombin&aacute;ci&oacute;j&aacute;val v&aacute;rjuk tőled:</p>
+<ul>
+    <li>&#x2753 Server oldal: C#, ASP.NET MVC, ASP.NET Web API, ASP.NET Core</li>
+    <li>&#x274c Kliens oldal: b&aacute;rmely n&eacute;pszerű Javascript framework (AngularJS, Knockout.js, Vue.js, React, etc)</li>
+</ul>
+<h3>&#x274c ELK&Eacute;SZ&Iacute;TENDŐ ANYAGOK</h3>
+<p>Az al&aacute;bbi anyagok elk&eacute;sz&iacute;t&eacute;s&eacute;t &eacute;s bek&uuml;ld&eacute;s&eacute;t k&eacute;rj&uuml;k:</p>
+<ul>
+    <li>&#x26a0 Forr&aacute;sk&oacute;d ford&iacute;that&oacute; &eacute;s futtathat&oacute; &aacute;llapotban</li>
+    <li>&#x26a0 Minim&aacute;l dokument&aacute;ci&oacute; ami r&ouml;viden tartalmazza a sz&uuml;ks&eacute;ges be&aacute;ll&iacute;t&aacute;sokat, nyitott k&eacute;rd&eacute;seket</li>
+</ul>
+<p>&nbsp;</p>

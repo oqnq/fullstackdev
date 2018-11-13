@@ -21,20 +21,26 @@ namespace WebshopAdmin.Models
         public virtual ProductCategory Category { get; set; }
         [Key]
         [ForeignKey("Category")]
+        [Display(Name = "Kategória")]
         public int ProductCategoryID { get; set; }
         [Required]
         [StringLength(120, MinimumLength = 6)]
+        [Display(Name = "Megnevezés")]
         public string Name { get; set; }
+        [Display(Name = "Leírás")]
         public string Description { get; set; }
         [Required]
         [DataType(DataType.Currency)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
+        [Display(Name = "Ár")]
         public decimal? Price { get; set; }
         [Required]
         [StringLength(120, MinimumLength = 5)]
+        [Display(Name = "Feltöltő neve")]
         public string OwnerName { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
+        [Display(Name = "E-mail")]
         public string OwnerEmail { get; set; }
         [Required]
         [Editable(false)]
