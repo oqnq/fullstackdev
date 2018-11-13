@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{538826A9-243C-49B7-ABB6-09AE5A67336F}"
 	ProjectSection(SolutionItems) = preProject
 		checklist.xlsx = checklist.xlsx
+		create_database.sql = create_database.sql
 	EndProjectSection
 EndProject
 Global
