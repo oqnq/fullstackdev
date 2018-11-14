@@ -10,8 +10,9 @@ namespace WebshopAdmin.Tests.API
         [TestMethod]
         public void ValidEmailTest()
         {
-            Assert.IsTrue(GraphisoftEmailValidator.IsValid("sducsai1@graphisoft.com"));
+            Assert.IsTrue(GraphisoftEmailValidator.IsValid("sducsai@graphisoft.com"));
             Assert.IsTrue(GraphisoftEmailValidator.IsValid("sducsai2@graphisoft.com"));
+            Assert.IsTrue(GraphisoftEmailValidator.IsValid("sducsai3@graphisoft.com"));
             Assert.IsTrue(GraphisoftEmailValidator.IsValid("sducsai3@graphisoft.com"));
         }
         [TestMethod]
@@ -22,6 +23,11 @@ namespace WebshopAdmin.Tests.API
             Assert.IsFalse(GraphisoftEmailValidator.IsValid("ísducsai3@graphisoft.com"));
             Assert.IsFalse(GraphisoftEmailValidator.IsValid("barki@graphisoft.com"));
             Assert.IsFalse(GraphisoftEmailValidator.IsValid(@"ísd/:\\ai3@gr#&>ap\""hisoft.com"));
+        }
+        [TestMethod]
+        public void MixedCaseTest()
+        {
+            Assert.IsTrue(GraphisoftEmailValidator.IsValid("sDucsAi3@graPHisoft.com"));
         }
     }
 }
