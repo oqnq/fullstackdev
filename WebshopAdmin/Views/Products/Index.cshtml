@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<WebshopAdmin.Models.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Termékek";
 }
 
-<h2>Index</h2>
+<h2>Termékek</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Új termék", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Category.Name)
+            Kategória 
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -65,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.UpdatedOn)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Szerkesztés", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Részletek", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Törlés", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

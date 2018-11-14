@@ -14,7 +14,7 @@ namespace WebshopAdmin.DataAccess
             context.ProductCategories.Add(new ProductCategory() { ID = 0, Name = "food" });
             context.ProductCategories.Add(new ProductCategory() { ID = 1, Name = "non-food" });
             context.SaveChanges();
-            context.Products.Add(new Product() { ID = 0, Name = "good food", ProductCategoryID = 1, CreatedOn = DateTime.Now, Description = "delicious stuff", OwnerEmail = "sducsai2@graphisoft.com", OwnerName = "Sanyi 1", Price = 1.25M, UpdatedOn = DateTime.Now });
+            context.Products.Add(new Product() { ID = 0, Name = "good food", ProductCategoryID = 1, CreatedOn = DateTime.Now, Description = "delicious stuff", OwnerEmail = "sducsai2@graphisoft.com", OwnerName = "Sanyi 1", Price = 125, UpdatedOn = DateTime.Now });
             context.SaveChanges();
         }
     }

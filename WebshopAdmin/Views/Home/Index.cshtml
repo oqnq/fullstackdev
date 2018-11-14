@@ -1,13 +1,14 @@
-﻿@{
+﻿@model IEnumerable<WebshopAdmin.Models.Product>
+@{
     ViewBag.Title = "Webshop Adminisztráció";
 }
 
 <div class="jumbotron">
-    <h1>FULL STACK DEVELOPER TESZTFELADAT</h1>
+    <h1>FULL STACK DEVELOPER TESZTFELADAT @System.Globalization.CultureInfo.CurrentUICulture</h1>
     <p class="lead">Webshop termékek adminisztrációja.</p>
     <p>
-        @Html.ActionLink("Dokumentáció", "About", "Home", new {@class="btn btn-primary btn-lg"})
-        
+        @Html.ActionLink("Dokumentáció", "About", "Home", new { @class = "btn btn-primary btn-lg" })
+
     </p>
 </div>
 
@@ -16,17 +17,23 @@
         <h2>Utoljára hozzáadva</h2>
         <p>
             Itt egy rövid lista pár termékről, amiket legutóbb hozzáadtunk.
+            <ul>
+                @foreach (var p in Model.Take(4))
+                {
+                    <li>@p.Name</li>
+                }
+            </ul>
         </p>
         <p>
-            @Html.ActionLink("Teljes lista", "Index", "Products",null, new { @class = "btn btn-default" })
+            @Html.ActionLink("Teljes lista", "Index", "Products", null, new { @class = "btn btn-default" })
         </p>
     </div>
     <div class="col-md-6">
         <h2>Kategóriák</h2>
-        <p>Az adatbázis @ViewBag.ProductCount terméket tartalmaz.</p>
+        <p>(legnépszerűbb, stb..)</p>
         <p>
-        <a href="@Url.Action("Index", "ProductCategories")" class = "btn btn-default" >Kategóriák szerkesztése &raquo;</a>
+            <a href="@Url.Action("Index", "ProductCategories")" class="btn btn-default">Kategóriák szerkesztése &raquo;</a>
         </p>
     </div>
-    
+
 </div>

@@ -53,6 +53,7 @@ namespace WebshopAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.Update();
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -87,6 +88,7 @@ namespace WebshopAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.Update();
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

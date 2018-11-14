@@ -22,6 +22,7 @@ namespace WebshopAdmin.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
+            //  data is being loaded in the index -- provider is not set
             Assert.IsNotNull(result);
         }
 

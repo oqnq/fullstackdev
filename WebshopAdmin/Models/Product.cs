@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using WebshopAdmin.App_Code;
 
 namespace WebshopAdmin.Models
 {
@@ -11,36 +12,37 @@ namespace WebshopAdmin.Models
     {
         public Product()
         {
-            CreatedOn = DateTime.Now;
+            CreatedOn = UpdatedOn = DateTime.Now;
         }
-        private void Update()
+        //  to be called on changes internally
+        internal void Update()
         {
             UpdatedOn = DateTime.Now;
         }
+        
         public int ID { get; set; }
         public virtual ProductCategory Category { get; set; }
-        [Key]
+        //[Key]
         [ForeignKey("Category")]
-        [Display(Name = "Kategória")]
+        [Display(Name = "Kategória")] //does not apply to view...
         public int ProductCategoryID { get; set; }
         [Required]
-        [StringLength(120, MinimumLength = 6)]
+        [StringLength(120, MinimumLength = 6, ErrorMessage = "a {0} legalább {1}, legfeljebb {2} hosszú lehet.")]
         [Display(Name = "Megnevezés")]
         public string Name { get; set; }
         [Display(Name = "Leírás")]
         public string Description { get; set; }
         [Required]
-        [DataType(DataType.Currency)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
         [Display(Name = "Ár")]
-        public decimal? Price { get; set; }
+        public int Price { get; set; }
         [Required]
-        [StringLength(120, MinimumLength = 5)]
+        [StringLength(120, MinimumLength = 5, ErrorMessage = "a {0} legalább {1}, legfeljebb {2} hosszú lehet.")]
         [Display(Name = "Feltöltő neve")]
         public string OwnerName { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail")]
+        [EmailValidation]
         public string OwnerEmail { get; set; }
         [Required]
         [Editable(false)]

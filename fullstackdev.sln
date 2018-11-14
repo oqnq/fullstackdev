@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		create_database.sql = create_database.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminServices", "AdminServices\AdminServices.csproj", "{A18381DF-0639-4101-8E98-22321C973A40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39598B66-19FC-40DC-8223-ED39BC3EA42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A18381DF-0639-4101-8E98-22321C973A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18381DF-0639-4101-8E98-22321C973A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18381DF-0639-4101-8E98-22321C973A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18381DF-0639-4101-8E98-22321C973A40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

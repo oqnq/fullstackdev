@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebshopAdmin.Models.ProductCategory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Termék kategóriák";
 }
 
-<h2>Index</h2>
+<h2>Termék kategóriák</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Új kategória", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,8 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Szerkesztés", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Törlés", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
